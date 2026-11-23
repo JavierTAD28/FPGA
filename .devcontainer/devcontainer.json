@@ -1,0 +1,15 @@
+{
+  "name": "Gowin FPGA OpenSource",
+  "image": "://microsoft.com",
+  "postCreateCommand": "URL=$(curl -s https://github.com | grep browser_download_url | grep linux-x64 | cut -d '\"' -f 4) && wget -qO- $URL | tar -xz -C /opt/",
+  "remoteEnv": {
+    "PATH": "/opt/oss-cad-suite/bin:${containerEnv:PATH}"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "mshr-h.veriloghdl"
+      ]
+    }
+  }
+}
